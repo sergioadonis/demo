@@ -15,8 +15,9 @@ Public Class ClienteDB
     Public Function GetDataTable() As DataTable
 
         Dim connection As New SqlConnection(strConnection)
-        Dim cmd As New SqlCommand(dataCommand, connection)
-        cmd.CommandType = CommandType.StoredProcedure
+        Dim cmd As New SqlCommand(dataCommand, connection) With {
+            .CommandType = CommandType.StoredProcedure
+        }
 
         Dim da As New SqlDataAdapter
         da.SelectCommand = cmd
@@ -32,13 +33,15 @@ Public Class ClienteDB
     Public Function GetDataTable(Id As Integer) As DataTable
 
         Dim connection As New SqlConnection(strConnection)
-        Dim cmd As New SqlCommand(dataCommand, connection)
-        cmd.CommandType = CommandType.StoredProcedure
+        Dim cmd As New SqlCommand(dataCommand, connection) With {
+            .CommandType = CommandType.StoredProcedure
+        }
         cmd.Parameters.AddWithValue("Id", Id)
         cmd.Parameters.AddWithValue("TipoData", 1)
 
-        Dim da As New SqlDataAdapter
-        da.SelectCommand = cmd
+        Dim da As New SqlDataAdapter With {
+            .SelectCommand = cmd
+        }
 
         Dim dt As New DataTable("Clientes")
         da.Fill(dt)
@@ -53,8 +56,9 @@ Public Class ClienteDB
 
         Dim connection As New SqlConnection(strConnection)
 
-        Dim cmd As New SqlCommand(mttoCommand, connection)
-        cmd.CommandType = CommandType.StoredProcedure
+        Dim cmd As New SqlCommand(mttoCommand, connection) With {
+            .CommandType = CommandType.StoredProcedure
+        }
 
         cmd.Parameters.Add(New SqlParameter() With {
             .ParameterName = "Id",
@@ -89,8 +93,9 @@ Public Class ClienteDB
 
         Dim connection As New SqlConnection(strConnection)
 
-        Dim cmd As New SqlCommand(mttoCommand, connection)
-        cmd.CommandType = CommandType.StoredProcedure
+        Dim cmd As New SqlCommand(mttoCommand, connection) With {
+            .CommandType = CommandType.StoredProcedure
+        }
 
         cmd.Parameters.Add(New SqlParameter() With {
             .ParameterName = "Id",
@@ -123,8 +128,9 @@ Public Class ClienteDB
 
         Dim connection As New SqlConnection(strConnection)
 
-        Dim cmd As New SqlCommand(mttoCommand, connection)
-        cmd.CommandType = CommandType.StoredProcedure
+        Dim cmd As New SqlCommand(mttoCommand, connection) With {
+            .CommandType = CommandType.StoredProcedure
+        }
 
         cmd.Parameters.Add(New SqlParameter() With {
             .ParameterName = "Id",
