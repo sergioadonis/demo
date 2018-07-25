@@ -82,4 +82,8 @@
     Private Sub btnPrint_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPrint.ItemClick
         Call ShowPrintPreview()
     End Sub
+
+    Private Sub btnEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEdit.ItemClick
+        Call Edit()
+    End Sub
 End Class
