@@ -50,7 +50,6 @@ Partial Public Class ClienteReport
         Me.XrPageInfo2 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.SqlDataSource1 = New DevExpress.DataAccess.Sql.SqlDataSource(Me.components)
         Me.ReportHeaderBand1 = New DevExpress.XtraReports.UI.ReportHeaderBand()
-        Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrTable1 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow2 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
@@ -59,6 +58,7 @@ Partial Public Class ClienteReport
         Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell8 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell9 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrTableRow1 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell1 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
@@ -130,7 +130,7 @@ Partial Public Class ClienteReport
         '
         'XrTableCell16
         '
-        Me.XrTableCell16.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Cliente.FechaNacimiento")})
+        Me.XrTableCell16.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Cliente.FechaNacimiento", "{0:d/M/yyyy}")})
         Me.XrTableCell16.Name = "XrTableCell16"
         Me.XrTableCell16.StyleName = "DetailData3"
         Me.XrTableCell16.Text = "XrTableCell16"
@@ -226,15 +226,6 @@ Partial Public Class ClienteReport
         Me.ReportHeaderBand1.HeightF = 60.0!
         Me.ReportHeaderBand1.Name = "ReportHeaderBand1"
         '
-        'XrLabel1
-        '
-        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(6.0!, 6.0!)
-        Me.XrLabel1.Name = "XrLabel1"
-        Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel1.SizeF = New System.Drawing.SizeF(638.0!, 26.0!)
-        Me.XrLabel1.StyleName = "Title"
-        Me.XrLabel1.Text = "Reporte de Clientes"
-        '
         'XrTable1
         '
         Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 32.0!)
@@ -291,6 +282,15 @@ Partial Public Class ClienteReport
         Me.XrTableCell9.StyleName = "DetailCaption3"
         Me.XrTableCell9.Text = "Direccion"
         Me.XrTableCell9.Weight = 2.0R
+        '
+        'XrLabel1
+        '
+        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(6.0!, 6.0!)
+        Me.XrLabel1.Name = "XrLabel1"
+        Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel1.SizeF = New System.Drawing.SizeF(638.0!, 26.0!)
+        Me.XrLabel1.StyleName = "Title"
+        Me.XrLabel1.Text = "Reporte de Clientes"
         '
         'XrTableRow1
         '
