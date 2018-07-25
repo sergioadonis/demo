@@ -52,10 +52,14 @@
     End Sub
 
     Private Sub Cancel()
-
+        Me.Dispose()
     End Sub
 
     Private Sub btnSave_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnSave.ItemClick
         Call Save()
+    End Sub
+
+    Private Sub btnCancel_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnCancel.ItemClick
+        Call Cancel()
     End Sub
 End Class
