@@ -70,7 +70,7 @@ Public Class ClienteDB
         With cmd.Parameters
             .Add(New SqlParameter() With {.ParameterName = "Nombres", .Value = Nombres, .DbType = DbType.String})
             .Add(New SqlParameter() With {.ParameterName = "Apellidos", .Value = Apellidos, .DbType = DbType.String})
-            .Add(New SqlParameter() With {.ParameterName = "FechaNacimiento", .Value = FechaNacimiento, .DbType = DbType.Date})
+            If FechaNacimiento > Date.MinValue Then .Add(New SqlParameter() With {.ParameterName = "FechaNacimiento", .Value = FechaNacimiento, .DbType = DbType.Date})
             .Add(New SqlParameter() With {.ParameterName = "DUI", .Value = DUI, .DbType = DbType.String})
             .Add(New SqlParameter() With {.ParameterName = "Direccion", .Value = Direccion, .DbType = DbType.String})
 
@@ -80,10 +80,11 @@ Public Class ClienteDB
         ' For INSERT
         cmd.Parameters.Add(New SqlParameter() With {.ParameterName = "TipoMtto", .Value = 1, .DbType = DbType.Int32})
 
-        Dim Id As Int32 = cmd.Parameters("Id").Value
+
 
         connection.Open()
         cmd.ExecuteNonQuery()
+        Dim Id As Int32 = cmd.Parameters("Id").Value
         connection.Close()
 
         Return Id
@@ -107,7 +108,7 @@ Public Class ClienteDB
         With cmd.Parameters
             .Add(New SqlParameter() With {.ParameterName = "Nombres", .Value = Nombres, .DbType = DbType.String})
             .Add(New SqlParameter() With {.ParameterName = "Apellidos", .Value = Apellidos, .DbType = DbType.String})
-            .Add(New SqlParameter() With {.ParameterName = "FechaNacimiento", .Value = FechaNacimiento, .DbType = DbType.Date})
+            If FechaNacimiento > Date.MinValue Then .Add(New SqlParameter() With {.ParameterName = "FechaNacimiento", .Value = FechaNacimiento, .DbType = DbType.Date})
             .Add(New SqlParameter() With {.ParameterName = "DUI", .Value = DUI, .DbType = DbType.String})
             .Add(New SqlParameter() With {.ParameterName = "Direccion", .Value = Direccion, .DbType = DbType.String})
 
