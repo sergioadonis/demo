@@ -49,10 +49,6 @@
     End Sub
 
     Private Sub Delete()
-
-    End Sub
-
-    Private Sub btnDelete_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnDelete.ItemClick
         If Not GridView1.IsFilterRow(GridView1.FocusedRowHandle) Then
 
             If MessageBox.Show(Me, "Desea realmente eliminar el cliente seleccionado?", "Confirmar", MessageBoxButtons.YesNo) = DialogResult.Yes Then
@@ -65,6 +61,10 @@
             End If
 
         End If
+    End Sub
+
+    Private Sub btnDelete_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnDelete.ItemClick
+        Call Delete()
     End Sub
 
     Private Sub ShowPrintPreview()
