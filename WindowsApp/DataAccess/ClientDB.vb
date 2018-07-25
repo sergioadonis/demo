@@ -1,12 +1,16 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
+Imports System.Configuration
 
 Public Class ClienteDB
 
     Private Const mttoCommand As String = "sp_mtto_cliente"
     Private Const dataCommand As String = "sp_data_cliente"
-    Private Const strConnection As String = "Data Source=localhost; uid=sa; pwd=123456; database=Demo"
+    Private strConnection As String '= "Data Source=localhost; uid=sa; pwd=123456; database=Demo"
 
+    Public Sub New()
+        strConnection = ConfigurationManager.ConnectionStrings("Demo").ConnectionString
+    End Sub
 
     Public Function GetDataTable() As DataTable
 
